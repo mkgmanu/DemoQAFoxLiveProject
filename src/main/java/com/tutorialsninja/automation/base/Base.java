@@ -25,7 +25,7 @@ public class Base {
 	
 	
 	
-	@Before
+	/*@Before
 	public void setUp(Scenario scenario){
 		log.info("Scenario Started: "+scenario.getName());
 		PropertyConfigurator.configure(PathHelper.getResourcePath("/src/main/resources/ConfigurationFile/log4j.properties"));
@@ -42,7 +42,7 @@ public class Base {
 		log.info("Scenario Completed: "+scenario.getName());
 		log.info("Scenario Status is: "+scenario.getStatus());
 		Base.driver.quit();
-		}
+		}*/
 	}
 
 
