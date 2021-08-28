@@ -3,17 +3,20 @@ package com.tutorialsninja.automation.stepdef;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+
 import com.tutorialsninja.automation.base.Base;
 import com.tutorialsninja.automation.config.PropertyFileReader;
 import com.tutorialsninja.automation.framework.Browser;
 import com.tutorialsninja.automation.util.PathHelper;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
+
 
 public class Hooks {
-	private static Logger log = Logger.getLogger(Hooks.class);
+	public static Logger log = Logger.getLogger(Hooks.class);
 	
 	@Before
 	public void setUp(Scenario scenario){
@@ -26,7 +29,7 @@ public class Hooks {
 	@After
 	public void closeBrowser(Scenario scenario){
 	if(scenario.isFailed()){
-	scenario.embed(Browser.takeScreenshot(), "image/png");
+	scenario.attach(Browser.takeScreenshot(), "image/png","Scenario screenshot");
 	}
 	log.info("Scenario Completed: "+scenario.getName());
 	log.info("Scenario Status is: "+scenario.getStatus());

@@ -22,6 +22,8 @@ public class PropertyFileReader implements ConfigurationReader{
 	}
 
 	public String getUrl() {
+		
+		//PropertyFileReader p = new PropertyFileReader();
 		return properties.getProperty("url");
 	}
 
